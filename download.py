@@ -3,12 +3,12 @@
 
 # In this example: A Huggingface BERT model
 
-from transformers import BlenderbotTokenizer, BlenderbotForConditionalGeneration
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
 def download_model():
     # do a dry run of loading the huggingface model, which will download weights
-    tokenizer = BlenderbotTokenizer.from_pretrained("facebook/blenderbot-3B")
-    model = BlenderbotForConditionalGeneration.from_pretrained("facebook/blenderbot-3B")
+    tokenizer = AutoTokenizer.from_pretrained("PygmalionAI/pygmalion-6b")
+    model = AutoModelForCausalLM.from_pretrained("PygmalionAI/pygmalion-6b")
 
 if __name__ == "__main__":
     download_model()
