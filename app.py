@@ -1,5 +1,5 @@
 import torch
-from transformers import BlenderbotTokenizer, BlenderbotForConditionalGeneration
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # Init is ran on server startup
 # Load your model to GPU as a global variable here using the variable name "model"
@@ -7,8 +7,8 @@ def init():
     global model
     global tokenizer
     
-    tokenizer = BlenderbotTokenizer.from_pretrained("facebook/blenderbot-3B")
-    model = BlenderbotForConditionalGeneration.from_pretrained("facebook/blenderbot-3B").to("cuda")
+tokenizer = AutoTokenizer.from_pretrained("PygmalionAI/pygmalion-6b")
+model = AutoModelForCausalLM.from_pretrained("PygmalionAI/pygmalion-6b")
 
 # Inference is ran for every server call
 # Reference your preloaded global model variable here.
